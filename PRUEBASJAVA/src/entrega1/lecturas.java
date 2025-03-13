@@ -83,5 +83,6 @@ public class lecturas {
         System.out.println("La longitud promedio de las líneas del fichero resources/palabras_random.csv es: " + calcularLongitudMediaLineasCSV("palabras_random.csv", ","));
     }
 }
+//los outputs de los test son los correctos
 
 

@@ -87,3 +87,4 @@ public class funciones {
         System.out.println("Resultado de la función 5 con a = 3 y e = 0.001, f(x) = 2x^2 y f'(x) = 4x: " + metodoNewton(3, 0.001));
     }
 }
+//los outputs de los test son los correctos
