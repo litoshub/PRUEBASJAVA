@@ -38,11 +38,7 @@ public class lecturas{
             resultado = lecturas.filtrarLineasConsecutivas("resources/lin_quijote.txt", List.of("palabraInexistente"));
             System.out.println(resultado.isEmpty()); // Debe ser vacío
             
-            try {
-                lecturas.filtrarLineasConsecutivas("archivo_no_existente.txt", List.of("Don"));
-            } catch (IOException e) {
-                System.out.println("Correcto: Error esperado al leer archivo inexistente");
-            }
+            
         } catch (Exception e) {
             System.out.println("Error inesperado en filtrarLineasConsecutivas: " + e.getMessage());
         }

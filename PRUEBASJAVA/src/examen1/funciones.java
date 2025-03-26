@@ -1,9 +1,17 @@
 package examen1;
 
-public class funciones{
+public class funciones {
+
+    public static void main(String[] args) {
+        System.out.println("Ejecutando pruebas...");
+
+        // Llamar a los métodos de prueba
+        testProductoImpares();
+        testSumaGeometricaAlternada();
+        testCombinatorioSinMultiplosDeTres();
+    }
 
     public static int productoImpares(int n) {
-        // Validar que n es positivo y mayor que 0
         if (n <= 0) {
             throw new IllegalArgumentException("El parámetro n debe ser positivo y mayor que 0");
         }
@@ -13,13 +21,13 @@ public class funciones{
 
         for (int i = 0; i < n; i++) {
             producto *= numeroImpar;
-            numeroImpar += 2; // Incrementar al siguiente número impar
+            numeroImpar += 2;
         }
 
         return producto;
     }
+
     public static double sumaGeometricaAlternada(double a1, double r, int k) {
-        // Validaciones
         if (k <= 0) {
             throw new IllegalArgumentException("k debe ser mayor que 0");
         }
@@ -35,10 +43,11 @@ public class funciones{
 
         return suma;
     }
+
     public static int factorialSinMultiplosDeTres(int num) {
         int resultado = 1;
         for (int i = 1; i <= num; i++) {
-            if (i % 3 != 0) { // Ignorar múltiplos de 3
+            if (i % 3 != 0) {
                 resultado *= i;
             }
         }
@@ -46,7 +55,6 @@ public class funciones{
     }
 
     public static int combinatorioSinMultiplosDeTres(int n, int k) {
-        // Validaciones
         if (n < k) {
             throw new IllegalArgumentException("n debe ser mayor o igual a k");
         }
@@ -54,21 +62,21 @@ public class funciones{
             throw new IllegalArgumentException("n y k deben ser positivos");
         }
 
-        // Calcular el número combinatorio sin los múltiplos de 3
         int numerador = factorialSinMultiplosDeTres(n);
         int denominadorK = factorialSinMultiplosDeTres(k);
         int denominadorNK = factorialSinMultiplosDeTres(n - k);
 
         return numerador / (denominadorK * denominadorNK);
     }
+
     private static void testProductoImpares() {
         System.out.println("Test productoImpares:");
         try {
-            System.out.println(funciones.productoImpares(3) == 15);
-            System.out.println(funciones.productoImpares(5) == 945);
-            System.out.println(funciones.productoImpares(1) == 1);
+            System.out.println(productoImpares(3) == 15);
+            System.out.println(productoImpares(5) == 945);
+            System.out.println(productoImpares(1) == 1);
             try {
-                funciones.productoImpares(0);
+                productoImpares(0);
             } catch (IllegalArgumentException e) {
                 System.out.println("Correcto: Error esperado para n=0");
             }
@@ -81,10 +89,10 @@ public class funciones{
     private static void testSumaGeometricaAlternada() {
         System.out.println("Test sumaGeometricaAlternada:");
         try {
-            System.out.println(funciones.sumaGeometricaAlternada(2, 3, 4) == (2 - 6 + 18 - 54));
-            System.out.println(funciones.sumaGeometricaAlternada(1, 2, 3) == (1 - 2 + 4));
+            System.out.println(sumaGeometricaAlternada(2, 3, 4) == (2 - 6 + 18 - 54));
+            System.out.println(sumaGeometricaAlternada(1, 2, 3) == (1 - 2 + 4));
             try {
-                funciones.sumaGeometricaAlternada(2, 3, 0);
+                sumaGeometricaAlternada(2, 3, 0);
             } catch (IllegalArgumentException e) {
                 System.out.println("Correcto: Error esperado para k=0");
             }
@@ -97,9 +105,9 @@ public class funciones{
     private static void testCombinatorioSinMultiplosDeTres() {
         System.out.println("Test combinatorioSinMultiplosDeTres:");
         try {
-            System.out.println(funciones.combinatorioSinMultiplosDeTres(5, 2));
+            System.out.println(combinatorioSinMultiplosDeTres(5, 2));
             try {
-                funciones.combinatorioSinMultiplosDeTres(4, 5);
+                combinatorioSinMultiplosDeTres(4, 5);
             } catch (IllegalArgumentException e) {
                 System.out.println("Correcto: Error esperado para n < k");
             }
@@ -110,5 +118,5 @@ public class funciones{
     }
 }
 
-}
+
  
