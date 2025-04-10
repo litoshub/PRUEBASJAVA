@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class lecturas{
-    public static List<String> filtrarLineasConsecutivas(String nombreArchivo, List<String> palabrasClave) {
+    public static List<String> filtrarLineasConsecutivas(String lin_quijote, List<String> palabrasClave) {
         List<String> lineasFiltradas = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("resources/" + nombreArchivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("resources/" + lin_quijote))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] palabras = linea.split("\\s+"); // Dividir en palabras
@@ -32,19 +32,47 @@ public class lecturas{
     private static void testFiltrarLineasConsecutivas() {
         System.out.println("Test filtrarLineasConsecutivas:");
         try {
-            List<String> resultado = lecturas.filtrarLineasConsecutivas("resources/lin_quijote.txt", List.of("Don", "Quijote"));
+            List<String> resultado = lecturas.filtrarLineasConsecutivas("lin_quijote.txt", List.of("Don", "Quijote"));
             System.out.println(!resultado.isEmpty()); // Verifica que haya resultados
             
-            resultado = lecturas.filtrarLineasConsecutivas("resources/lin_quijote.txt", List.of("palabraInexistente"));
+            resultado = lecturas.filtrarLineasConsecutivas("lin_quijote.txt", List.of("palabraInexistente"));
             System.out.println(resultado.isEmpty()); // Debe ser vacío
-            
-            
         } catch (Exception e) {
             System.out.println("Error inesperado en filtrarLineasConsecutivas: " + e.getMessage());
         }
         System.out.println();
-    }
-}
-
-
-
+     }}
+          
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
